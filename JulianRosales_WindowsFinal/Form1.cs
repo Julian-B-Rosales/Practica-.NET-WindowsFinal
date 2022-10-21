@@ -42,12 +42,12 @@ namespace JulianRosales_WindowsFinal
                 st = false;
                 MessageBox.Show("El puesto debe ser de Soporte Tecnico, DBA o Desarrollador");
             }
-            if (nombre.Length > 2 && nombre.Length < 50) 
+            if (nombre.Length < 2 || nombre.Length > 50) 
             {
                 st = false;
                 MessageBox.Show("El nombre debe tener mas de 2 caracteres y menos de 50");
             }
-            if (apellido.Length > 2 && apellido.Length < 50) 
+            if (apellido.Length < 2 || apellido.Length > 50) 
             {
                 st = false;
                 MessageBox.Show("El apellido debe tener mas de 2 caracteres y menos de 50");
@@ -57,7 +57,10 @@ namespace JulianRosales_WindowsFinal
             {
                 MessageBox.Show("No cumple las validaciones solicitadas. Corrija los datos ingresados");
             }
-
+            else
+            {
+                MessageBox.Show("Los datos han sido validados correctamente.");
+            }
         }
 
         private void btnMostrar_Click(object sender, EventArgs e)
