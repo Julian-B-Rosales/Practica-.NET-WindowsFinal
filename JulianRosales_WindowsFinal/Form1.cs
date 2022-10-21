@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace JulianRosales_WindowsFinal
 {
@@ -17,6 +18,7 @@ namespace JulianRosales_WindowsFinal
         string apellido;
         double sueldo;
         string puesto;
+        double[] horas = new double[5];
 
         public Form1()
         {
@@ -45,6 +47,26 @@ namespace JulianRosales_WindowsFinal
 
         }
 
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            guardarDatos();
+            MessageBox.Show(nombre.ToUpper() + " " + apellido.ToUpper() + "\n" + puesto);
+        }
+        private void btnHoras_Click(object sender, EventArgs e)
+        {
+            string[] dias = new string[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" };
+            double aux, total = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                aux = Convert.ToDouble(Interaction.InputBox("Ingreses cuantas horas trabajo el dia " + dias[i] + ":"));
+                horas[i] = aux;
+                total += aux;
+            }
+
+            MessageBox.Show("Usted trabajo un total de " + total + " horas esta semana.");
+        }
+
+        #region
         private void guardarDatos()
         {
             nombre = txtNombre.Text;
@@ -54,10 +76,8 @@ namespace JulianRosales_WindowsFinal
 
         }
 
-        private void btnMostrar_Click(object sender, EventArgs e)
-        {
-            guardarDatos();
-            MessageBox.Show(nombre.ToUpper() + " " + apellido.ToUpper() + "\n" + puesto);
-        }
+        #endregion
+
+        
     }
 }

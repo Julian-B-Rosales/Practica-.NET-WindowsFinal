@@ -134,6 +134,7 @@
             this.btnHoras.TabIndex = 10;
             this.btnHoras.Text = "Ingresar Horas";
             this.btnHoras.UseVisualStyleBackColor = true;
+            this.btnHoras.Click += new System.EventHandler(this.btnHoras_Click);
             // 
             // btnLimpiar
             // 
