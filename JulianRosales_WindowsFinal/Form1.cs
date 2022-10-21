@@ -53,5 +53,11 @@ namespace JulianRosales_WindowsFinal
             puesto = txtPuesto.Text.ToUpper();
 
         }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            guardarDatos();
+            MessageBox.Show(nombre.ToUpper() + " " + apellido.ToUpper() + "\n" + puesto);
+        }
     }
 }
